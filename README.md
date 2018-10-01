@@ -34,6 +34,15 @@ Response:
 
 ```
 
+#### Get a winner
+
+```bash
+http://localhost:8080/game/{id}/winner
+```
+
+
+The following endpoint takes a GET Request and if there is a winner returns the user that is the winner, and in the case of no winner it returns a HTTP Bad Request code and an error stating there is no winner. 
+
 
 #### Join a player
 

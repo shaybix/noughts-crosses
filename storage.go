@@ -8,6 +8,7 @@ import (
 	"github.com/boltdb/bolt"
 )
 
+// Database is an interface
 type Database interface {
 	createGame(g *Game) error
 	saveGame(g *Game) error
@@ -15,7 +16,7 @@ type Database interface {
 }
 
 // BoltDB is a database type that satisfies the Database interface so in the future one can easily
-// swap it for another choice of database, so long it satisf
+// swap it for another choice of database, so long it satisfies the Database interface.
 type BoltDB struct {
 	db *bolt.DB
 }

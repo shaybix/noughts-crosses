@@ -31,6 +31,7 @@ func main() {
 	router.HandleFunc("/game", game.CreateGameHandler).Methods("POST")
 	router.HandleFunc("/game/{id}/join", game.JoinPlayerHandler).Methods("POST")
 	router.HandleFunc("/game/{id}", game.GetGameHandler).Methods("GET")
+	router.HandleFunc("/game/{id/winner", game.GetWinnerHandler).Methods("GET")
 	router.HandleFunc("/game/{id}/nought", game.SetNoughtHandler).Methods("POST")
 	router.HandleFunc("/game/{id}/cross", game.SetCrossHandler).Methods("POST")
 
