@@ -17,6 +17,24 @@ http://localhost:8080/game
 
 The following endpoint takes a POST Request with an empty body to create a game where IDs are generated (for the game and first player) and persisted to a database. 
 
+Response:
+
+```json
+{
+    "game": {
+        "id": 5555555555555,
+        "first_player": {
+            "id": 444555352252,
+        },
+        "second_player": null,
+        "noughts": null, 
+        "crosses": null, 
+    }
+}
+
+```
+
+
 #### Join a player
 
 ```bash
@@ -35,6 +53,30 @@ http://localhost:8080/game/{id}
 The following endpoint takes a GET request and retrieves the status of a game with the given ID in the url.
 
 
+response:
+
+```json
+{
+    "game": {
+        "id": 5555555555555,
+        "first_player": {
+            "id": 444555352252,
+        },
+        "second_player":{
+            "id": 5325252525,
+        },
+        "noughts": [
+            {"x": 1, "y":2, "player": {"id": 5254242524}},
+            {"x": 1, "y":2, "player": {"id": 5254242524}},
+        ],
+        "crosses": [
+            {"x": 1, "y":2, "player": {"id": 5254242524}},
+            {"x": 1, "y":2, "player": {"id": 5254242524}},
+        ],
+    }
+}
+
+```
 
 #### Set a nought or a cross in the Game
 
@@ -50,7 +92,9 @@ The following endpoint takes a POST request with a json in the body:
     "nought": {
         "x": 1,
         "y": 1,
-        "user_id": 5432525252,
+        "player": {
+            "id": 5432525252,
+        },
     },
 }
 ```
@@ -70,7 +114,9 @@ So if a player's move that consist of putting a nought in the dead center box, w
     "nought": {
         "x": 2,
         "y": 2,
-        "user_id": 5432525252,
+        "player": {
+            "id": 5432525252,
+        },
     },
 }
 ```
